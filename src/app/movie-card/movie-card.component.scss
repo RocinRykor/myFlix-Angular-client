@@ -1,0 +1,9 @@
+img {
+  width: 300px
+}
+
+.movie-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

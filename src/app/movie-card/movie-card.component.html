@@ -1,0 +1,26 @@
+<div style="display: flex;width:100%;overflow: auto;">
+  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;margin:1rem">
+    <mat-card-header>
+      <mat-card-title class="movie-title">{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img src={{movie.ImageURL}} alt={{movie.Title}} />
+    <mat-card-actions>
+      <button mat-icon-button color="primary" matTooltip="Genre">
+        <mat-icon>info</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" matTooltip="Director">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" matTooltip="Synopsis">
+        <mat-icon>description</mat-icon>
+      </button>
+      <button color="primary" matTooltip="Add to favorites">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button color="primary" matTooltip="Remove from favorites">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
