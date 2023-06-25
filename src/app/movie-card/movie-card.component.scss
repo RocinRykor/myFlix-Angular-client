@@ -53,20 +53,24 @@ mat-card-actions {
 .icon-button {
   margin-right:10px;
   padding: 0px;
-  background-color: #1A1D1A;
+  background-color: $cardColor;
   border: none;
 }
+
 mat-icon {
   margin: 0px !important;
   color: #fff;
 }
+
 mat-icon:hover {
-  color: #e91e63;
+  color: $heartColor;
 }
 
 mat-icon.is-favorite {
-  color: #e91e63;
+  color: $heartColor;
+  transition: 1s;
 }
 mat-icon.is-favorite:hover {
   color: #fff;
+  transition: .5s;
 }

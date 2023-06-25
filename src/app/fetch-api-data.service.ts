@@ -91,26 +91,16 @@ export class FetchApiDataService {
     );
   }
 
-// Get User endpoint
+// Get User endpoint -- Simplified since the user is got on login and stored in localstorage
   getUser(): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     return user;
-    // const username = localStorage.getItem('username');
-    // const token = localStorage.getItem('token');
-    // return this.http.get(apiUrl + 'users/' + username, {
-    //   headers: new HttpHeaders(
-    //     {
-    //       Authorization: 'Bearer ' + token,
-    //     })
-    // }).pipe(
-    //   map(this.extractResponseData),
-    //   catchError(this.handleError)
-    // );
   }
 
 // Gert Favourite Movies endpoint
   getFavoriteMovies(): Observable<any> {
-    const username = localStorage.getItem('username');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const username = user.Username;
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'users/' + username, {
       headers: new HttpHeaders(
@@ -149,7 +139,8 @@ export class FetchApiDataService {
 
 // Post Edit User endpoint
   editUser(updatedUser: any): Observable<any> {
-    const username = localStorage.getItem('username');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const username = user.Username;
     const token = localStorage.getItem('token');
     return this.http.put(apiUrl + 'users/' + username, updatedUser, {
       headers: new HttpHeaders(
@@ -164,7 +155,8 @@ export class FetchApiDataService {
 
 // Delete User endpoint
   deleteUser(): Observable<any> {
-    const username = localStorage.getItem('username');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const username = user.Username;
     const token = localStorage.getItem('token');
     return this.http.delete(apiUrl + 'users/' + username, {
       headers: new HttpHeaders(

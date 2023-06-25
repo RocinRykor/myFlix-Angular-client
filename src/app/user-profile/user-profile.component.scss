@@ -1,0 +1,59 @@
+@import "src/app/_variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+mat-card {
+  background-color: $cardColor;
+  color: $textColor;
+  padding: 5px;
+}
+
+.content {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-favorites {
+  flex: 0 0 35%; /* Set the width of the favorites card */
+  margin-right: 20px;
+  margin-top: 20px; /* Add spacing between the favorites and details/update cards */
+}
+
+.favorite-list {
+  height: 30em;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+.list-title {
+  color: $textColor;
+}
+
+.list-line {
+  color: $textSubtitleColor;
+}
+
+.profile-details-update {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allow the details and update cards to occupy remaining space */
+  margin-top: 20px; /* Add spacing between the favorites and details/update cards */
+}
+
+.profile-update {
+  width: 100%; /* Span the width of the container */
+  margin-top: 20px; /* Add spacing between the details and update cards */
+}
+
+.profile-update form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+}
+
+.profile-update button {
+  width: 100%;
+  margin-top: 10px;
+}

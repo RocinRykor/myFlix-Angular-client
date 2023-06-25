@@ -6,7 +6,7 @@
 
 mat-toolbar {
   background-color: $cardColor;
-  color: #fff;
+  color: $buttonMainColor;
   position: sticky;
   top: 0;
   left: 0;
@@ -18,7 +18,7 @@ mat-toolbar {
   justify-content: flex-start;
   align-items: center;
   height: max-content;
-  box-shadow: 0px 2px 15px 0px rgba(255,255,255,0.3)
+  box-shadow: 0px 2px 15px 0px $boxShadowColor;
 }
 
 .nav-logo {

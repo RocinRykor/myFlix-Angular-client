@@ -16,13 +16,11 @@
       <button mat-icon-button class="icon-button" (click)="openDialog('Synopsis', movie.Description)" color="primary" matTooltip="Synopsis">
         <mat-icon>description</mat-icon>
       </button>
-      <button *ngIf="!isFavorite(movie._id)" mat-icon-button (click)="addFavorite(movie._id)" color="primary"
-              matTooltip="Add to favorites">
+      <button class="icon-button" *ngIf="!isFavorite(movie._id)" (click)="addFavorite(movie._id)">
         <mat-icon>favorite_border</mat-icon>
       </button>
-      <button *ngIf="isFavorite(movie._id)" mat-icon-button (click)="removeFavorite(movie._id)" color="primary"
-              matTooltip="Remove from favorites">
-        <mat-icon>favorite</mat-icon>
+      <button class="icon-button" *ngIf="isFavorite(movie._id)" (click)="removeFavorite(movie._id)">
+        <mat-icon class="is-favorite">favorite</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>
