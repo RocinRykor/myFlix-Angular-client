@@ -1,9 +1,72 @@
-img {
-  width: 300px
+@import "src/app/_variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.movies-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 15px 15px;
+  margin: 30px;
+  justify-content: center;
+  background-color: $backgroundColor;
+  padding-block: 30px;
+}
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  width: 300px;
+  background-color: $cardColor;
+  color: $textColor;
+  flex-shrink: 0;
+}
+
+mat-card-header {
+  height: 15%;
+  margin-bottom: 5px;
+  margin-top: 15px;
 }
 
 .movie-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 24px;
+}
+
+mat-card-subtitle {
+  color: $textSubtitleColor;
+}
+img {
+  height: 100%;
+  object-fit: contain;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.icon-button {
+  margin-right:10px;
+  padding: 0px;
+  background-color: #1A1D1A;
+  border: none;
+}
+mat-icon {
+  margin: 0px !important;
+  color: #fff;
+}
+mat-icon:hover {
+  color: #e91e63;
+}
+
+mat-icon.is-favorite {
+  color: #e91e63;
+}
+mat-icon.is-favorite:hover {
+  color: #fff;
 }
