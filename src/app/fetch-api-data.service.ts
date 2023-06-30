@@ -11,13 +11,21 @@ const apiUrl = 'https://mymov-project.herokuapp.com/';
   providedIn: 'root'
 })
 
+/**
+ * @class FetchApiDataService
+ * Service to load information from API
+ */
 export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
   }
 
-  // Making the api call for the user registration endpoint
+  /**
+   * Making the api call for the user registration endpoint
+   * @param userDetails - User Credentials
+   * @returns HTTP POST Request
+   */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
@@ -25,7 +33,11 @@ export class FetchApiDataService {
     );
   }
 
-  // Making the api call for the user login endpoint
+  /**
+   *  Making the api call for the user login endpoint
+   * @param userDetails
+   * @returns HTTP POST Request
+   */
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
@@ -35,7 +47,10 @@ export class FetchApiDataService {
   }
 
 
-// Get All Movies endpoint
+  /**
+   * Get All Movies endpoint
+   * @returns HTTP GET Request - JSON Data of All Movies
+   */
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {
@@ -49,7 +64,11 @@ export class FetchApiDataService {
     );
   }
 
-// Get Single Movie endpoint
+  /**
+   * Get Single Movie endpoint
+   * @param title - Title of Requested Movie
+   * @returns HTTP GET Request - JSON Data of Single Movie
+   */
   getOneMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/' + title, {
@@ -63,7 +82,11 @@ export class FetchApiDataService {
     );
   }
 
-// Get Director endpoint
+  /**
+   * Get Director endpoint
+   * @param directorName - Name of requested Director
+   * @returns HTTP GET Request - JSON Data of Single Director
+   */
   getOneDirector(directorName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/director/' + directorName, {
@@ -77,7 +100,11 @@ export class FetchApiDataService {
     );
   }
 
-// Get Genre endpoint
+  /**
+   * Get Genre endpoint
+   * @param genreName - Title of requested Genre
+   * @returns HTTP GET Request - JSON Data of Single Genre
+   */
   getOneGenre(genreName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/genre/' + genreName, {
@@ -91,13 +118,19 @@ export class FetchApiDataService {
     );
   }
 
-// Get User endpoint -- Simplified since the user is got on login and stored in localstorage
+  /**
+   * Get User endpoint -- Simplified since the user is got on login and stored in localstorage
+   * @returns user - User data from localStorage
+   */
   getUser(): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     return user;
   }
 
-// Gert Favourite Movies endpoint
+  /**
+   * Get Favourite Movies endpoint
+   * @returns HTTP GET Request - JSON Data of users favorite movies
+   */
   getFavoriteMovies(): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const username = user.Username;
@@ -114,7 +147,11 @@ export class FetchApiDataService {
     );
   }
 
-// Post Add Favourite Movies endpoint
+  /**
+   * Post Add Favourite Movies endpoint
+   * @param movieId - ObjectID of selected Movie
+   * @returns HTTP POST Request - Adds selected movie to user's favorite list
+   */
   addFavoriteMovie(movieId: string): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
@@ -132,12 +169,21 @@ export class FetchApiDataService {
     );
   }
 
+  /**
+   * Check whether movie is on user's favorite list
+   * @param movieId - ObjectID of selected Movie
+   * @returns boolean
+   */
   isFavoriteMovie(movieId: string): boolean {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     return user.FavoriteMovies.indexOf(movieId) >= 0;
   }
 
-// Post Edit User endpoint
+  /**
+   * Post Edit User endpoint
+   * @param updatedUser - Updated User information
+   * @returns HTTP PUT Request - Updates selected user
+   */
   editUser(updatedUser: any): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const username = user.Username;
@@ -153,7 +199,10 @@ export class FetchApiDataService {
     );
   }
 
-// Delete User endpoint
+  /**
+   * Delete User endpoint
+   * returns HTTP DELETE Request - Deletes selected user
+   */
   deleteUser(): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const username = user.Username;
@@ -169,7 +218,11 @@ export class FetchApiDataService {
     );
   }
 
-// Deleting Favorite Movies endpoint
+  /**
+   * Deleting Favorite Movies endpoint
+   * @param movieId - ObjectID of selected Movie
+   * @returns HTTP DELETE Request - Removes selected movie from user's favorite list
+   */
   deleteFavoriteMovie(movieId: string): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');

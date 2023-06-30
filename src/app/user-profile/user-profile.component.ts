@@ -47,7 +47,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   *Calls the API to update the user info.
+   * Calls the API to update the user info.
    */
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
@@ -64,7 +64,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   *Calls the API to delete the user.
+   * Calls the API to delete the user.
    */
   deleteUser(): void {
     this.fetchApiData.deleteUser().subscribe((result) => {
