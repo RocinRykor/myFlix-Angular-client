@@ -1,3 +1,14 @@
+# Project description
+Angular version of the movie application, myFlix 
+
+# Live Site
+[Click Here to visit the Live Site](https://rocinrykor.github.io/myFlix-Angular-client/)
+
+# API Information
+Built using the previous a previous API
+
+[Check out the Github Repo for the Movie API Here](https://github.com/RocinRykor/Movie-API)
+
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.

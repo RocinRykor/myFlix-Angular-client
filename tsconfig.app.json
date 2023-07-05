@@ -9,14 +9,6 @@
     "src/main.ts"
   ],
   "include": [
-    "src",
-    "src/app",
-    "src/**/*.d.ts",
-  ],
-  "exclude": [
-    "node_modules",
-    "src/app/**/*.component.spec",
-    "src/app/**/*.component.html",
-    "src/app/**/*.component.scss"
+    "src/**/*.d.ts"
   ]
 }
