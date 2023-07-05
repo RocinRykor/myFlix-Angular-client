@@ -2,7 +2,7 @@
 Angular version of the movie application, myFlix 
 
 # Live Site
-[Click Here to visit the Live Site](https://rocinrykor.github.io/myFlix-Angular-client/)
+[Click Here to visit the Live Site](https://rocinrykor.github.io/myFlix-Angular-client/welcome)
 
 # API Information
 Built using the previous a previous API
